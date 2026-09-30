@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Studio – Free, Custom & Privacy-First QR Code Generator</title>
+    <meta
+      name="description"
+      content="Create beautiful, scan-reliable QR codes for URLs, Wi-Fi, contacts, WhatsApp, Google Maps, and events with real-time preview and instant SVG/PNG export."
+    />
+    <meta name="keywords" content="QR code generator, custom QR code, wifi qr code, vcard qr, privacy qr generator, svg qr code" />
+    <meta name="author" content="Arpan Goswami" />
+
+    <!-- OpenGraph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="QR Studio" />
+    <meta property="og:title" content="QR Studio – Free, Custom & Privacy-First QR Code Generator" />
+    <meta
+      property="og:description"
+      content="Create beautiful, scan-reliable QR codes for URLs, Wi-Fi, contacts, WhatsApp, Google Maps, and events with real-time preview and instant SVG/PNG export."
+    />
+    <meta property="og:image" content="/pwa-512x512.png" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="QR Studio – Free, Custom & Privacy-First QR Code Generator" />
+    <meta
+      name="twitter:description"
+      content="Create beautiful, scan-reliable QR codes for URLs, Wi-Fi, contacts, WhatsApp, Google Maps, and events with real-time preview and instant SVG/PNG export."
+    />
+    <meta name="twitter:image" content="/pwa-512x512.png" />
+
+    <!-- Mobile & PWA -->
+    <meta name="theme-color" content="#4F46E5" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="QR Studio" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="alternate icon" type="image/png" href="/pwa-192x192.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "QR Studio",
+      "url": "https://qrstudio.app",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "All",
+      "browserRequirements": "Requires JavaScript. Requires HTML5.",
+      "description": "High-performance, privacy-first QR code generator with real-time visual customization, gradient styles, logo integration, and vector SVG/PNG export.",
+      "creator": {
+        "@type": "Person",
+        "name": "Arpan Goswami"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "INR"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

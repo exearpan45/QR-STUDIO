@@ -1,0 +1,6 @@
+{
+  "name": "QR Studio",
+  "description": "Premium, privacy-friendly QR code generator and customization platform. Create custom QR codes for URLs, Wi-Fi, contacts, events, social media, and more.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
