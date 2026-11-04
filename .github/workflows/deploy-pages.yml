@@ -24,13 +24,22 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
       - name: Install dependencies
         run: npm install
 
+      - name: Type-check application
+        run: npm run lint
+
       - name: Build
         run: npm run build
+
+      - name: Verify production output
+        run: |
+          test -s dist/index.html
+          test -f dist/manifest.webmanifest
+          node -e "const m=JSON.parse(require('fs').readFileSync('dist/manifest.webmanifest','utf8')); if(m.start_url !== '/QR-STUDIO/' || m.scope !== '/QR-STUDIO/') throw new Error('PWA start_url/scope must stay inside /QR-STUDIO/');"
 
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
