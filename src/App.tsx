@@ -165,7 +165,7 @@ export default function App() {
 
   // Support route paths like /wifi-qr-code, /vcard-qr-code on first load
   useEffect(() => {
-    const path = window.location.pathname.toLowerCase();
+    const path = window.location.pathname.toLowerCase().replace(/^\/qr-studio(?=\/|$)/, '') || '/';
     const routeMap: Record<string, QRType> = {
       '/wifi-qr-code': 'wifi',
       '/url-qr-code': 'url',
