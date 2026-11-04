@@ -4,9 +4,11 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
 
+const basePath = '/QR-STUDIO/';
+
 export default defineConfig(() => {
   return {
-    base: '/QR-STUDIO/',
+    base: basePath,
     plugins: [
       react(),
       tailwindcss(),
@@ -14,30 +16,30 @@ export default defineConfig(() => {
         registerType: 'autoUpdate',
         includeAssets: ['icon.svg', 'apple-touch-icon.png', 'pwa-192x192.png', 'pwa-512x512.png', 'robots.txt', 'sitemap.xml'],
         manifest: {
-          id: '/',
+          id: basePath,
           name: 'QR Studio - QR Code Generator',
           short_name: 'QR Studio',
           description: 'Premium, privacy-friendly QR code generator and customization studio. 100% in-browser generation.',
           theme_color: '#4F46E5',
           background_color: '#0F172A',
           display: 'standalone',
-          start_url: '/',
-          scope: '/',
+          start_url: basePath,
+          scope: basePath,
           icons: [
             {
-              src: '/pwa-192x192.png',
+              src: `${basePath}pwa-192x192.png`,
               sizes: '192x192',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-512x512.png',
+              src: `${basePath}pwa-512x512.png`,
               sizes: '512x512',
               type: 'image/png',
               purpose: 'any',
             },
             {
-              src: '/pwa-maskable-512x512.png',
+              src: `${basePath}pwa-maskable-512x512.png`,
               sizes: '512x512',
               type: 'image/png',
               purpose: 'maskable',
