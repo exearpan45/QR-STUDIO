@@ -281,6 +281,38 @@ export default function App() {
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {activeNavTab === 'studio' && (
           <div>
+            {/* Studio Hero */}
+            <section className="studio-hero mb-6 relative overflow-hidden rounded-[28px] px-6 py-7 sm:px-8 sm:py-9 lg:px-10 lg:py-10 text-white">
+              <div className="studio-hero-glow studio-hero-glow-one" aria-hidden="true" />
+              <div className="studio-hero-glow studio-hero-glow-two" aria-hidden="true" />
+              <div className="relative z-10 max-w-3xl">
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/10 px-3 py-1.5 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[.18em] text-indigo-100 backdrop-blur-md">
+                  <Sparkles className="h-3.5 w-3.5 text-violet-200" /> Your ideas, one scan away
+                </div>
+                <h1 className="mt-4 max-w-2xl text-3xl sm:text-4xl lg:text-[46px] font-black leading-[1.08] tracking-[-.045em]">
+                  Make every scan <span className="studio-hero-gradient-text">count.</span>
+                </h1>
+                <p className="mt-3 max-w-xl text-sm sm:text-base leading-7 text-indigo-100/85">
+                  Build beautiful, custom QR codes in seconds. Live previews, thoughtful controls and private-by-design generation, all in one focused studio.
+                </p>
+                <div className="mt-6 flex flex-wrap gap-2">
+                  <span className="studio-hero-chip"><ShieldCheck className="h-3.5 w-3.5" /> Private by design</span>
+                  <span className="studio-hero-chip"><Sparkles className="h-3.5 w-3.5" /> Live customization</span>
+                  <span className="studio-hero-chip"><Download className="h-3.5 w-3.5" /> Print-ready exports</span>
+                </div>
+              </div>
+              <div className="studio-hero-mark" aria-hidden="true">
+                <div className="studio-hero-mark-inner">
+                  <svg viewBox="0 0 100 100" fill="none" className="h-full w-full">
+                    <rect x="8" y="8" width="30" height="30" rx="5" stroke="white" strokeWidth="7" />
+                    <rect x="62" y="8" width="30" height="30" rx="5" stroke="white" strokeWidth="7" />
+                    <rect x="8" y="62" width="30" height="30" rx="5" stroke="white" strokeWidth="7" />
+                    <path d="M62 62h12v12H62zM80 62h12v12H80zM62 80h12v12H62zM80 80h12v12H80z" fill="white" />
+                  </svg>
+                </div>
+              </div>
+            </section>
+
             {/* Top Sub-banner: 1-Minute Goal & Templates Quick Action */}
             <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 bg-white rounded-2xl border border-slate-200/90 shadow-2xs">
               <div className="flex items-center gap-2.5">
