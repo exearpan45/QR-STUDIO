@@ -20,7 +20,7 @@ import {
 import { generatePayload } from './utils/qrPayload';
 import { evaluateReadability } from './utils/contrast';
 import { useOnlineStatus } from './hooks/useOnlineStatus';
-import { Sparkles, Eye, Sliders, Edit3, ArrowRight } from 'lucide-react';
+import { Sparkles, Eye, Sliders, Edit3, ArrowRight, ShieldCheck, Download } from 'lucide-react';
 
 const INITIAL_FORM_DATA: AllFormData = {
   url: '',
