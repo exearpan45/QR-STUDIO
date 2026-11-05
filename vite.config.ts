@@ -4,7 +4,10 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import {VitePWA} from 'vite-plugin-pwa';
 
-const basePath = '/QR-STUDIO/';
+// GitHub Pages serves this project from a repository subpath.
+// Vercel serves it from the domain root, so its assets and PWA scope must use '/'.
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+const basePath = isGitHubPages ? '/QR-STUDIO/' : '/';
 
 export default defineConfig(() => {
   return {
@@ -69,4 +72,3 @@ export default defineConfig(() => {
     },
   };
 });
-
