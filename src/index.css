@@ -176,3 +176,180 @@ img, canvas, svg {
     filter: saturate(1.04);
   }
 }
+
+
+/* Next-level studio layer: expressive hero, calmer workspace and crisp controls. */
+.studio-hero {
+  isolation: isolate;
+  min-height: 260px;
+  background: linear-gradient(118deg, #17143f 0%, #29216f 46%, #4c36a6 100%);
+  box-shadow: 0 24px 60px rgba(49, 46, 129, .18), inset 0 1px 0 rgba(255,255,255,.14);
+  animation: studio-rise .65s var(--studio-ease) both;
+}
+
+.studio-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .22;
+  background-image: radial-gradient(rgba(255,255,255,.55) .7px, transparent .7px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(90deg, black, transparent 75%);
+}
+
+.studio-hero-glow {
+  position: absolute;
+  z-index: -1;
+  width: 22rem;
+  height: 22rem;
+  border-radius: 999px;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.studio-hero-glow-one {
+  right: 9%;
+  top: -14rem;
+  background: radial-gradient(circle, rgba(129,140,248,.48), rgba(129,140,248,0) 68%);
+  animation: studio-float 9s ease-in-out infinite;
+}
+
+.studio-hero-glow-two {
+  right: -8rem;
+  bottom: -17rem;
+  background: radial-gradient(circle, rgba(217,70,239,.28), rgba(217,70,239,0) 68%);
+  animation: studio-float 11s ease-in-out infinite reverse;
+}
+
+.studio-hero-gradient-text {
+  color: #c4b5fd;
+  background: linear-gradient(90deg, #c4b5fd, #f0abfc 55%, #bfdbfe);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.studio-hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 999px;
+  background: rgba(255,255,255,.09);
+  padding: .48rem .78rem;
+  color: rgba(238,242,255,.94);
+  font-size: 11px;
+  font-weight: 600;
+  backdrop-filter: blur(12px);
+}
+
+.studio-hero-mark {
+  position: absolute;
+  right: clamp(1.5rem, 8vw, 7rem);
+  top: 50%;
+  width: clamp(112px, 17vw, 190px);
+  aspect-ratio: 1;
+  transform: translateY(-50%) rotate(8deg);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 34px;
+  background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.035));
+  box-shadow: 0 24px 55px rgba(8,8,35,.24), inset 0 1px 0 rgba(255,255,255,.2);
+  padding: 1.25rem;
+  backdrop-filter: blur(14px);
+  animation: studio-mark-float 7s ease-in-out infinite;
+}
+
+.studio-hero-mark-inner {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 8px 18px rgba(255,255,255,.16));
+}
+
+/* Lift the existing panels without changing their layout or behaviour. */
+.bg-white.rounded-2xl.border {
+  border-color: rgba(226,232,240,.88);
+  border-radius: 22px;
+  box-shadow: 0 2px 5px rgba(15,23,42,.025), 0 14px 36px rgba(15,23,42,.045);
+  transition: box-shadow .28s var(--studio-ease), border-color .28s var(--studio-ease), transform .28s var(--studio-ease);
+}
+
+.bg-white.rounded-2xl.border:hover {
+  border-color: rgba(165,180,252,.65);
+  box-shadow: 0 5px 12px rgba(15,23,42,.035), 0 20px 48px rgba(49,46,129,.075);
+}
+
+header.sticky {
+  background: rgba(250,251,255,.82);
+  border-color: rgba(226,232,240,.75);
+  box-shadow: 0 8px 30px rgba(15,23,42,.045);
+}
+
+header.sticky nav {
+  border-color: rgba(226,232,240,.85);
+  background: rgba(241,245,249,.76);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="color"]):not([type="range"]),
+textarea, select {
+  border-radius: 12px;
+}
+
+button:not(:disabled) {
+  will-change: transform;
+}
+
+button:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+button:not(:disabled):active {
+  transform: translateY(0) scale(.975);
+}
+
+/* Subtle entrance for the studio workspace, without animating every control. */
+.studio-hero + .mb-6,
+.studio-hero ~ .lg\\:grid-cols-12 {
+  animation: studio-rise .55s .08s var(--studio-ease) both;
+}
+
+@keyframes studio-rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes studio-float {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50% { transform: translate3d(-14px,12px,0) scale(1.06); }
+}
+
+@keyframes studio-mark-float {
+  0%, 100% { margin-top: 0; }
+  50% { margin-top: -9px; }
+}
+
+@media (max-width: 767px) {
+  .studio-hero {
+    min-height: 0;
+    border-radius: 23px;
+    padding-right: 1.25rem;
+  }
+  .studio-hero-mark {
+    right: -2.3rem;
+    top: auto;
+    bottom: -2.2rem;
+    width: 118px;
+    padding: .8rem;
+    opacity: .28;
+    transform: rotate(8deg);
+  }
+  .studio-hero p { max-width: 90%; }
+  .studio-hero-chip { font-size: 10px; padding: .42rem .62rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .studio-hero, .studio-hero-glow, .studio-hero-mark,
+  .studio-hero + .mb-6, .studio-hero ~ .lg\\:grid-cols-12 {
+    animation: none !important;
+  }
+}
